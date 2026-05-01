@@ -14,6 +14,8 @@ exports.handler = async function(event) {
   var email = body.email;
   var firstName = body.firstName;
 
+  console.log('Enviando a Perfit:', email, firstName);
+
   var response = await fetch('https://api.myperfit.com/v2/contacts', {
     method: 'POST',
     headers: {
@@ -27,13 +29,13 @@ exports.handler = async function(event) {
     })
   });
 
-  var data = await response.json();
+  var text = await response.text();
+  console.log('Respuesta Perfit status:', response.status);
+  console.log('Respuesta Perfit body:', text);
 
   return {
     statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    },
-    body: JSON.stringify(data)
+    headers: { 'Access-Control-Allow-Origin': '*' },
+    body: text
   };
 };
