@@ -20,7 +20,7 @@ exports.handler = async function(event) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer minaaccesorio-UPKEk3aL3o6LA7EPikTjFWhfaN4X3TWk'
+      'Authorization': 'Bearer minaaccesorio-1VTyG75vwmiCBq6mz8yNZc1enhWdHa2n'
     },
     body: JSON.stringify({
       email: email,
