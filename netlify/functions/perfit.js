@@ -16,7 +16,7 @@ exports.handler = async function(event) {
 
   console.log('Enviando a Perfit:', email, firstName);
 
-  var response = await fetch('https://api.myperfit.com/v2/contacts', {
+  var response = await fetch('https://api.myperfit.com/v2/minaaccesorio/lists/4/contacts', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -24,8 +24,7 @@ exports.handler = async function(event) {
     },
     body: JSON.stringify({
       email: email,
-      firstName: firstName,
-      lists: [4]
+      firstName: firstName
     })
   });
 
